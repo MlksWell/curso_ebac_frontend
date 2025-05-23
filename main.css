@@ -1,0 +1,142 @@
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+        padding-top: 20px;
+        background-color: #f9f7f1;
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0;
+    }
+
+    h1 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        font-size: 2rem;
+        color: #2b2b2b;
+    }
+
+    #icone-titulo {
+        width: 60px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    form {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        padding: 8px 12px;
+        font-size: 1rem;
+        border: none;
+        border-bottom: 2px solid #b1a57b;
+        background-color: transparent;
+        outline: none;
+        width: 300px;
+    }
+
+    input[type="text"]:focus {
+        border-bottom-color: #5f27cd;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 1rem;
+        background-color: #5f27cd;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #341f97;
+    }
+
+    /* Botão Limpar Todas */
+    #btn-limpar-tudo {
+        margin-top: 10px;
+        background-color: #d63031;
+    }
+
+    #btn-limpar-tudo:hover {
+        background-color: #b71c1c;
+    }
+
+    ol#lista-tarefas {
+        width: 320px;
+        padding-left: 0;
+        margin-left: 0;
+        margin-top: 40px;
+        background: repeating-linear-gradient(
+            to bottom,
+            #f9f7f1,
+            #f9f7f1 30px,
+            #d9d7cc 30px
+        );
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-shadow: inset 0 0 8px #ddd;
+        counter-reset: tarefa;
+    }
+
+    ol#lista-tarefas li {
+        padding: 6px 8px 6px 70px;
+        border-bottom: 1px solid #d9d7cc;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s;
+        position: relative;
+        list-style: none;
+        counter-increment: tarefa;
+    }
+
+    ol#lista-tarefas li::before {
+        content: counter(tarefa) ".";
+        position: absolute;
+        left: 12px;
+        font-weight: bold;
+        color: #555;
+        font-size: 1.2rem;
+    }
+
+    ol#lista-tarefas li:last-child {
+        border-bottom: none;
+    }
+
+    ol#lista-tarefas li:hover {
+        background-color: #eee8cc;
+    }
+
+    .concluida {
+        text-decoration: line-through;
+        color: gray;
+    }
+
+    .concluida .btn-remover {
+        text-decoration: none !important;
+        color: #d63031 !important;
+    }
+
+    .btn-remover {
+        background-color: transparent;
+        border: none;
+        color: #d63031;
+        font-weight: bold;
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 0 8px;
+    }
+
+    .btn-remover:hover {
+        color: #b71c1c;
+    }
+
